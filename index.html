@@ -15,10 +15,9 @@
   </header>
   <main>
     <section class="contenedor-texto-sin-encriptar">
-      <textarea class="texto-sin-encriptar" id="" placeholder="Ingrese el texto aqui"></textarea>
+      <textarea class="texto-sin-encriptar" id="texto-sin-encriptar" placeholder="Ingrese el texto aqui"></textarea>
       <div class="texto-aclaracion">
-        <p> <i class="bi bi-exclamation-diamond-fill"></i> Solo letras minúsculas y sin acentos
-        </p>
+        <p><i class="bi bi-exclamation-diamond-fill"></i> Solo letras minúsculas y sin acentos</p>
       </div>
       <div class="botones">
         <button class="btn-encriptar" type="button" onclick="encriptarTexto();">Encriptar</button>
@@ -27,26 +26,30 @@
     </section>
     <section class="contenedor-caja-encriptada">
       <div class="caja-encriptada-img">
-        <img src="/img/Muñeco.png" alt="">
+        <img src="/img/archivo-encriptado.png" alt="">
       </div>
       <div class="caja-encriptada-texto">
         <h3>Ningún mensaje fue encontrado</h3>
       </div>
       <div class="caja-encriptada-parrafo">
-        <p>
-          Ingresa el texto que desees encriptar o desencriptar.
-        </p>
+        <p>Ingresa el texto que desees encriptar o desencriptar.</p>
       </div>
-      <div class="botones">
-        <button class="btn-copiar" type="button" onclick="copiarTexto();">Copiar</button>
+      <div class="contenedor-texto-encriptado">
+        <h3> </h3>
+        <p class="texto-resultado"></p>
       </div>
+      <button class="btn-copiar" type="button" onclick="copiarTexto();">Copiar</button>
     </section>
   </main>
   <footer>
-    <i class="bi bi-linkedin"></i>
-    <i class="bi bi-github"></i>
+    <a href="https://www.linkedin.com/in/jcamargodiaz/" target="_blank">
+      <i class="bi bi-linkedin"></i>
+    </a>
+    <a href="https://github.com/JCamargoDiaz" target="_blank">
+      <i class="bi bi-github"></i>
+    </a>
   </footer>
+  <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
 
 </html>
