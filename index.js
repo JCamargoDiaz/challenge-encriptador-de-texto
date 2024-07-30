@@ -1,7 +1,9 @@
 function encriptarTexto() {
   let textoSinEncriptar = document.getElementById("texto-sin-encriptar").value;
-  let textoEncriptado = "";
 
+  if (!validarTexto(textoSinEncriptar)) return;
+
+  let textoEncriptado = "";
   for (let i = 0; i < textoSinEncriptar.length; i++) {
     let char = textoSinEncriptar[i];
     if (char === "a") {
@@ -24,8 +26,10 @@ function encriptarTexto() {
 
 function desencriptarTexto() {
   let textoEncriptado = document.getElementById("texto-sin-encriptar").value;
-  let textoDesencriptado = "";
 
+  if (!validarTexto(textoEncriptado)) return;
+
+  let textoDesencriptado = "";
   for (let i = 0; i < textoEncriptado.length; i++) {
     if (textoEncriptado.slice(i, i + 2) === "ai") {
       textoDesencriptado += "a";
@@ -58,7 +62,15 @@ function copiarTexto() {
   window.getSelection().addRange(range); // to select text
   document.execCommand("copy");
   window.getSelection().removeAllRanges(); // to deselect
-  alert("Texto copiado");
+
+  // Muestra el mensaje de copiado
+  const mensajeCopiado = document.getElementById("mensaje-copiado");
+  mensajeCopiado.classList.add("show");
+
+  // Oculta el mensaje de copiado después de 2 segundos
+  setTimeout(() => {
+    mensajeCopiado.classList.remove("show");
+  }, 2000);
 }
 
 function mostrarResultado(texto, titulo) {
@@ -84,4 +96,21 @@ function mostrarResultado(texto, titulo) {
     btnCopiar.style.display = "block";
     contenedorTextoEncriptado.textContent = titulo;
   }
-} 
+}
+
+function validarTexto(texto) {
+  const textoError = document.getElementById("texto-error");
+  const regex = /^[a-z\s]+$/;
+
+  if (!regex.test(texto)) {
+    textoError.classList.add("show");
+
+    // Oculta el mensaje de error después de 2 segundos
+    setTimeout(() => {
+      textoError.classList.remove("show");
+    }, 2000);
+
+    return false;
+  }
+  return true;
+}
