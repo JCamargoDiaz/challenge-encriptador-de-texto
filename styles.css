@@ -83,6 +83,45 @@ main {
   color: var(--color-verde-neon);
 }
 
+/* ESTILOS PARA EL MENSAJE DE ERROR */
+.texto-error {
+  display: none;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #d9534f;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.texto-error i {
+  margin-right: 5px;
+  color: #d9534f;
+}
+
+.texto-error.show {
+  display: block;
+}
+
+/* ESTILOS PARA EL MENSAJE DE COPIADO */
+.mensaje-copiado {
+  display: none;
+  width: 80%;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  color: var(--color-verde-neon);
+  background-color: var(--color-gris-metalico);
+  margin: 0 auto;
+}
+
+.mensaje-copiado.show {
+  display: block;
+}
+
 /* ESTILO DE BOTONES */
 .botones {
   text-align: center;
