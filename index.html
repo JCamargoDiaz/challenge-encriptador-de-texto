@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <title>Document</title>
+  <title>Encriptador</title>
 </head>
 
 <body>
   <header>
-    <img src="/img/logoalura.png" alt="logo Alura">
+    <a href="index.html">
+      <img src="/img/logoalura.png" alt="logo Alura">
+    </a>
   </header>
   <main>
     <section class="contenedor-texto-sin-encriptar">
@@ -22,6 +24,9 @@
       <div class="botones">
         <button class="btn-encriptar" type="button" onclick="encriptarTexto();">Encriptar</button>
         <button class="btn-desencriptar" type="button" onclick="desencriptarTexto();">Desencriptar</button>
+      </div>
+      <div class="texto-error" id="texto-error">
+        <i class="bi bi-exclamation-triangle-fill"></i> Ingrese un texto en minúsculas o sin acentos
       </div>
     </section>
     <section class="contenedor-caja-encriptada">
@@ -39,6 +44,7 @@
         <p class="texto-resultado"></p>
       </div>
       <button class="btn-copiar" type="button" onclick="copiarTexto();">Copiar</button>
+      <div class="mensaje-copiado" id="mensaje-copiado">Texto copiado</div>
     </section>
   </main>
   <footer>
